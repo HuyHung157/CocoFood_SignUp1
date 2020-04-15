@@ -1,0 +1,240 @@
+<!-- <app-sign-up></app-sign-up> -->
+<!-- <app-sign-up-page></app-sign-up-page> -->
+<section class="header">
+    <div class="header__content header__items row">
+        <div class="header__logo header__item col-3">
+            <a href="#">
+                <img class="logo" src="../../assets/img/logo_CocoFood.png" alt="logo">
+            </a>
+        </div>
+        <div class="header__navbar header__item col-6">
+            <nav class="navbar  navbar-light">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <button class="btn__toggler navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Liên Hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header__lookup header__search header__item col-1"><i class="fa fa-search"></i></div>
+        <div class="header__language header__item col-2">
+            <button class="language__EN" (click)="switchLanguage('en')">EN</button>
+            <button class="language__VN" (click)="switchLanguage('vi')">VN</button>
+        </div>
+    </div>
+</section>
+<section class="body">
+    <div class="body__banner">
+        <div class="banner__nav">
+            <ul class="navbar__items horizontal-list">
+                <li class=" navbar__item">
+                    <a class="nav-link active" href="#" translate>banner.nav_1</a>
+                </li>
+                <li class=" navbar__item">
+                    <a class="nav-link" href="#" translate>banner.nav_2</a>
+                </li>
+                <li class=" navbar__item">
+                    <a class="nav-link" href="#" translate>banner.nav_3</a>
+                </li>
+            </ul>
+        </div>
+        <div class="banner__group1">
+            <div class="banner__info">
+                <div class="info__group">
+                    <h2 class="banner__title-head" translate>
+                        banner.title
+                    </h2>
+                    <h2 class="banner__title-mid" translate>
+                        banner.title_1
+                    </h2>
+                    <h2 class="banner__title-bot" translate>
+                        banner.title_2
+                    </h2>
+                    <p class="banner__subtitle" translate>
+                        banner.subTitle
+                    </p>
+                </div>
+            </div>
+            <div class="banner__form">
+                <div class="form">
+                    <div class="form-background">
+                        <h3 class="form__title" translate>form.title</h3>
+                        <form novalidate (ngSubmit)="onSubmit()" [formGroup]="rfContact" class="row form__group">
+                            <div class="form__content">
+                                <div class="form-group  row">
+                                    <label for="example-text-input" class="col-md-12 col-form-label"
+                                        translate>form.nameRestaurant</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="text" id="example-text-input"
+                                            formControlName="contactName">
+                                    </div>
+                                </div>
+                                <div class="col alert alert-danger" role="alert"
+                                    *ngIf="rfContact.get('contactName')?.errors?.required && rfContact.get('contactName')?.touched"
+                                    translate>
+                                    message.nameRestaurant
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label for="example-email-input" class="col-md-12 col-form-label"
+                                        translate>form.namePartner</label>
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="text" id="example-email-input"
+                                            formControlName="email">
+                                    </div>
+                                </div>
+                                <fieldset formGroupName="social">
+                                    <div class="row">
+                                        <div class="form-group row col-6">
+                                            <label for="example-url-fb" class="col-md-12 col-form-label"
+                                                translate>form.phoneNumber</label>
+                                            <div class="col-md-12">
+                                                <input class="form-control" type="number" id="example-url-fb"
+                                                    formControlName="facebook">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row col-6">
+                                            <label for="example-url-twt" class="col-md-12 col-form-label"
+                                                translate>form.email</label>
+                                            <div class="col-md-12">
+                                                <input class="form-control" type="email" id="example-url-twt"
+                                                    formControlName="twitter">
+                                            </div>
+                                        </div>
+                                        <div class="col alert alert-danger" role="alert"
+                                            *ngIf="rfContact.get('social.facebook')?.hasError('required') && rfContact.get('social.facebook')?.touched"
+                                            translate>
+                                            message.phoneNumber
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="input_addressTitle" class="col-md-12 col-form-label"
+                                            translate>form.addressTitle</label>
+                                        <div class="row col-12">
+                                            <div class="col-6">
+                                                <input class="form-control" type="url" id="input_addressTitle"
+                                                    formControlName="website" translate="City"  placeholder="Thành phố / City" translate translate-attr-placeholder="form.city"/>
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="form-control" type="text" formControlName="website" placeholder="Quận / District">
+                                            </div>
+                                        </div>
+                                        <div class="row col-12">
+                                            <div class="col-6">
+                                                <input class="form-control" type="text" formControlName="website" placeholder="Phường / Ward">
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="form-control" type="text" formControlName="website" placeholder="123 đường ABC / 123, ABC St.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group row col-6">
+                                            <label for="example-bstype" class="col-md-12 col-form-label"
+                                                translate>form.businessType</label>
+                                            <div class="col-md-12">
+                                                <input class="form-control" type="text" id="example-bstype"
+                                                    formControlName="businessType">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row col-6">
+                                            <label for="example-url-web" class="col-md-12 col-form-label"
+                                                translate>form.website</label>
+                                            <div class="col-md-12">
+                                                <input class="form-control" type="url" id="example-url-web"
+                                                    formControlName="website">
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col alert alert-danger" role="alert"
+                                            *ngIf="rfContact.get('social.facebook')?.hasError('required') && rfContact.get('social.facebook')?.touched"
+                                            translate>
+                                            message.phoneNumber
+                                        </div> -->
+                                    </div>
+                                </fieldset>
+                                <div class="recaptcha">
+                                    <re-captcha formControlName="recaptchaReactive"></re-captcha>
+                                </div>
+                                <div class="group__btn ">
+                                    <div class=" btn__div div__submit">
+                                        <button class="btn btn__submit" type="submit">SUBMIT</button>
+                                    </div>
+                                    <div class=" btn__div div__cancel">
+                                        <button class="btn btn__cancel" type="reset">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </form>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body__scanner-background">
+        <img src="/assets/img/banner_scanner.png" alt="img_scanner">
+    </div>
+</section>
+<section class="footer">
+    <div class="footer__content row">
+        <div class="footer__info col-6">
+            <div class="infor__group">
+                <h3 translate>footer.company</h3>
+                <ul class="info__items">
+                    <li class="info__item">
+                        <span class="info__icon"><i class="fa fa-map-marker-alt"></i></span>
+                        <span class="info__text" translate>footer.address</span>
+                    </li>
+                    <li class="info__item">
+                        <span class="info__icon"><i class="fa fa-envelope"></i></span>
+                        <span class="info__text">info@cocofood.com</span>
+                    </li>
+                    <li class="info__item">
+                        <span class="info__icon"><i class="fa fa-mobile-alt"></i></span>
+                        <span class="info__text">+84 911 11 111</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__social col-6">
+            <h3>Social Media</h3>
+            <ul class="social__items">
+                <li class="social__item item_1 facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </li>
+                <li class="social__item google">
+                    <i class="fab fa-google"></i>
+                </li>
+                <li class="social__item twitter">
+                    <i class="fab fa-twitter"></i>
+                </li>
+                <li class="social__item mail">
+                    <i class="fa fa-envelope"></i>
+                </li>
+            </ul>
+            <div class="email__group">
+                <input class="email__info" type="mail" name="mail" id="mail" placeholder="Email">
+                <div class="button__telegram">
+                    <li class="social__item telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright">© Copyright 2020 Cocofood</div>
+</section>

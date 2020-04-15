@@ -1,0 +1,264 @@
+<section class="header">
+    <div class="header__content header__items row">
+        <div class="header__logo header__item col-3">
+            <a href="#">
+                <img class="logo" src="../../assets/img/logo_CocoFood.png" alt="logo">
+            </a>
+        </div>
+        <div class="header__navbar header__item col-6">
+            <nav class="navbar  navbar-light">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <button class="btn__toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Liên Hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header__lookup header__item col-1"><i class="fa fa-search"></i></div>
+        <div class="header__language header__item col-2">
+            <button class="language__EN" href=""(click)="switchLanguage('en')" >EN</button>
+            <button class="language__VN" href=""(click)="switchLanguage('vi')" >VN</button>
+        </div>
+    </div>
+</section>
+<section class="body">
+    <div class="body__banner">
+        <div class="banner__nav">
+            <ul class="navbar__items horizontal-list">
+                <li class=" navbar__item">
+                    <a class="nav-link active" href="#">NHÀ HÀNG, QUÁN ĂN</a>
+                </li>
+                <li class=" navbar__item">
+                    <a class="nav-link" href="#">THỰC PHẨM TƯƠI SỐNG</a>
+                </li>
+                <li class=" navbar__item">
+                    <a class="nav-link" href="#">TÀI XẾ NỘI BỘ</a>
+                </li>
+            </ul>
+        </div>
+        <div class="banner__info">
+            <h2 class="banner__head-title">
+                THÊM MÓN NGON,
+                KHÁCH THÊM ĐÔNG,
+                BẠN VÀ HÀNG XÓM THÊM VUI
+            </h2>
+            <p class="banner__subtitle">
+                Mang món ngon nhà làm lan tỏa đến ngay
+                hàng xóm của mình
+            </p>
+        </div>
+        <div class="banner__form">
+            <div class="form">
+                <div class="form-background">
+                    <h3 class="form__title">TRỞ THÀNH ĐỐI TÁC NHÀ HÀNG,
+                        QUÁN ĂN VỚI COCOFOOD</h3>
+                    <!-- <form novalidate class="row justify-content-md-center" (ngSubmit)="onSubmit()">
+                        <div class="col-md-8">
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-2 col-form-label">
+                                    Tên nhà hàng / quán ăn:
+                                </label>
+                                <div class="col-10">
+                                    <input class="form-control" type="text" id="example-text-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-email-input" class="col-2 col-form-label">
+                                    Người đại diện:
+                                </label>
+                                <div class="col-10">
+                                    <input class="form-control" type="text" id="example-email-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-url-fb" class="col-2 col-form-label">
+                                    Số điện thoại:
+                                </label>
+                                <div class="col-10">
+                                    <input class="form-control" type="number" id="example-url-fb">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="email-input" class="col-2 col-form-label">
+                                    Email:
+                                </label>
+                                <div class="col-10">
+                                    <input class="form-control" type="email" id="email-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-url-web" class="col-2 col-form-label">
+                                    Địa chỉ kinh doanh:
+                                </label>
+                                <div class="col-10">
+                                    <input class="form-control" type="url" id="example-url-web">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-tel-input" class="col-2 col-form-label">
+                                    Loại kinh doanh:
+                                </label>
+                                <div class="col-10">
+                                    <input class="form-control" type="tel" id="example-tel-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="url-input" class="col-2 col-form-label">
+                                    Website:
+                                </label>
+                                <div class="col-10">
+                                    <input class="form-control" type="url" id="url-input">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-7 btn__submit">
+                                    <button class="btn btn-danger" type="submit">SUBMIT</button>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-4 btn__cancel">
+                                    <button class="btn btn-secondary" type="submit">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form> -->
+                    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="rfContact" class="row form__group">
+                        <div class="form__content">
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-md-2 col-form-label">Name:</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="text" id="example-text-input"
+                                        formControlName="contactName">
+                                </div>
+                            </div>
+                            <div class="col alert alert-danger" role="alert"
+                                *ngIf="rfContact.get('contactName')?.errors?.required && rfContact.get('contactName')?.touched">
+                                Name is required!
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-email-input" class="col-md-2 col-form-label">Email:</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="email" id="example-email-input"
+                                        formControlName="email">
+                                </div>
+                            </div>
+                            <fieldset formGroupName="social">
+                                <div class="form-group row">
+                                    <label for="example-url-fb" class="col-md-2 col-form-label">Facebook:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="url" id="example-url-fb"
+                                            formControlName="facebook">
+                                    </div>
+                                </div>
+                                <div class="col alert alert-danger" role="alert"
+                                    *ngIf="rfContact.get('social.facebook')?.hasError('required') && rfContact.get('social.facebook')?.touched">
+                                    Facebook is required!
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-twt" class="col-md-2 col-form-label">Twitter:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="url" id="example-url-twt"
+                                            formControlName="twitter">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-url-web" class="col-md-2 col-form-label">Website:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="url" id="example-url-web"
+                                            formControlName="website">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div formArrayName="tels" *ngIf="tels.controls.length">
+                                <div class="form-group row" *ngFor="let c of tels.controls; index as i">
+                                    <label for="example-tel-input" class="col-md-2 col-form-label">Tel:</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="tel" id="example-tel-input"
+                                            [formControlName]="i">
+                                        <div class="text-right">
+                                            <button class="btn btn-info" (click)="addTel()">+</button>
+                                            <button class="btn btn-danger" (click)="removeTel(i)"
+                                                *ngIf="tels.controls.length > 1">-</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-10 offset-md-2">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </form>
+                    <!-- <pre>{{ rfContact.value | json }}</pre> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="body__scanner-background">
+        <img src="/assets/img/banner_scanner.png" alt="img_scanner">
+    </div>
+</section>
+<section class="footer">
+    <div class="footer__content row">
+        <div class="footer__info col-6">
+            <div class="infor__group">
+                <h3>CÔNG TY TNHH THƯƠNG MẠI CÔNG NGHỆ COCOFOOD.</h3>
+                <ul class="info__items">
+                    <li class="info__item">
+                        <span class="info__icon"><i class="fa fa-map-marker-alt"></i></span>
+                        <span class="info__text">117 Nguyễn Đình Chiểu, P. 6, Q. 3, TP Hồ Chí Minh</span>
+                    </li>
+                    <li class="info__item">
+                        <span class="info__icon"><i class="fa fa-envelope"></i></span>
+                        <span class="info__text">info@cocofood.com</span>
+                    </li>
+                    <li class="info__item">
+                        <span class="info__icon"><i class="fa fa-mobile-alt"></i></span>
+                        <span class="info__text">+84 911 11 111</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__social col-6">
+            <h3>Social Media</h3>
+            <ul class="social__items">
+                <li class="social__item item_1 facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </li>
+                <li class="social__item google">
+                    <i class="fab fa-google"></i>
+                </li>
+                <li class="social__item twitter">
+                    <i class="fab fa-twitter"></i>
+                </li>
+                <li class="social__item mail">
+                    <i class="fa fa-envelope"></i>
+                </li>
+            </ul>
+            <div class="email__group">
+                <input class="email__info" type="mail" name="mail" id="mail" placeholder="Email">
+                <div class="button__telegram">
+                    <li class="social__item telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright">© Copyright 2020 Cocofood</div>
+</section>
