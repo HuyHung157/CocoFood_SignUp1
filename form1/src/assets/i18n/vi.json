@@ -35,7 +35,7 @@
         "city": "Vui lòng nhập Thành Phố",
         "district": "Vui lòng nhập Quận",
         "ward": "Vui lòng nhập Phường",
-        "street": "Vui lòng nhập 123 đường ABC",
+        "street": "Vui lòng nhập đường",
         "businessType": "Vui lòng nhập Loại hình kinh doanh",
         "website": "Vui lòng nhập Website"
     }

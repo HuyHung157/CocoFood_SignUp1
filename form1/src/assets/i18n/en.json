@@ -35,8 +35,8 @@
         "city": "Please enter your City",
         "district": "Please enter your District",
         "ward": "Please enter your Ward",
-        "street": "Please enter your 123, ABC Street",
-        "businessType": "Please enter your Loại hình kinh doanh",
+        "street": "Please enter your Street",
+        "businessType": "Please enter your Business type",
         "website": "Please enter your Website"
     }
 }
